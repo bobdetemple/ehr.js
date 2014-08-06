@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block content
+  .container
+    h1.text-center ehr.js
+    hr
+    if message != "" && message != null
+      .alert.alert-danger.login.text-center= message
+    .panel.panel-default.login
+      .panel-heading
+        h4.text-center Login
+      .panel-body
+        form(method='POST')
+          input.form-control(placeholder='Username', name='username')
+          input.form-control(type='password', placeholder='Password', name='password')
+          button.btn.btn-primary.btn-block('type=submit') Log In
