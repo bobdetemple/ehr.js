@@ -1,0 +1,16 @@
+extends ../../layouts/main
+
+block main-content
+    .page-header
+      h1 Admin <small>Edit User</small>
+    form(method='POST', action='/admin/users/edit')
+      input(type='hidden', value='#{user._id}', name='_id')
+      p First Name
+      input.form-control(type='text', value='#{user.firstName}', name='firstName')
+      p Last Name
+      input.form-control(type='text', value='#{user.lastName}', name='lastName')
+      p Username
+      input.form-control(type='text', value='#{user.username}', name='username')
+      p Password
+      input.form-control(type='password', value='', name='password')
+      button.btn.btn-primary(type='submit') Update

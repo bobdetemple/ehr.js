@@ -4,8 +4,8 @@ var db           = require('../data/db');
 
 exports.init = function() {
 
-	var a = db.user.findOne({ username: 'admin'}, function(err, a) {
-		if(!a) createAdminUser();
+	var a = db.users.find(function(err, users) {
+		if(users.length == 0) createAdminUser();
 	});
 
 }

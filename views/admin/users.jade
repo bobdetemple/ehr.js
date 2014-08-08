@@ -1,0 +1,31 @@
+extends ../layouts/main
+
+block main-content
+    .page-header
+      h1 Admin <small>Users</small>
+    if message != "" && message != null
+      .alert.alert-success.text-center= message
+        button.close(data-dismiss='alert'): span &times;
+    a.btn.btn-default(href='/admin/users/add')
+      span: i.glyphicon.glyphicon-plus
+      span Add
+    table.table
+      thead
+        tr
+          th
+          th Last Name
+          th First Name
+          th Username
+      tbody
+        each user in users
+          tr
+            td
+              .btn-group.table-dropdown
+                button.btn.btn-default.dropdown-toggle(data-toggle='dropdown'): i.caret
+                ul.dropdown-menu
+                  li: a(href='/admin/users/edit/#{user._id}') Edit
+                  li: a.confirm-delete(data-href='/admin/users/delete/#{user._id}') Delete
+            td= user.lastName
+            td= user.firstName
+            td= user.username
+            

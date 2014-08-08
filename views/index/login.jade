@@ -6,11 +6,12 @@ block content
     hr
     if message != "" && message != null
       .alert.alert-danger.login.text-center= message
+        button.close(data-dismiss='alert'): span &times;
     .panel.panel-default.login
       .panel-heading
         h4.text-center Login
       .panel-body
         form(method='POST')
-          input.form-control(placeholder='Username', name='username')
+          input.form-control(placeholder='Username', name='username' autofocus='true')
           input.form-control(type='password', placeholder='Password', name='password')
           button.btn.btn-primary.btn-block('type=submit') Log In

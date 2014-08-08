@@ -2,8 +2,16 @@ body {
   font-family: 'Open Sans'
 }
 
+a:hover {
+	cursor: pointer;
+}
+
 h1, h2, h3, h4, h5 {
 	font-weight: 300;
+}
+
+button .glyphicon {
+	margin-right: 5px;
 }
 
 .jumbotron.home {
@@ -41,3 +49,17 @@ h1, h2, h3, h4, h5 {
 	width: 95%;
 	margin: auto;
 }
+
+.page-header {
+	margin-top: 20px;
+}
+
+input[type='text'], input[type='password'] {
+	margin: 10px 0px;
+	max-width: 400px;
+}
+
+.table-dropdown .btn {
+	padding: 0px 5px;
+}
+
